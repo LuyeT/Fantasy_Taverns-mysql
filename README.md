@@ -1,0 +1,2 @@
+# Fantasy_Taverns-mysql
+A set of sql scripts which constructs a mysql database along with dummy data that was written as part of a online class i attended with Miles Technologies. The homework appended requirements to the database on a weekly basis as different concepts of relational databases were covered. I plan to use this as part of an example website for devops projects. As such, the tables and constraints could probably do with a redesign in tandem with the php application, but for the time being should serve well enough as an example.
