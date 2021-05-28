@@ -1,0 +1,5 @@
+-- 9. Write a series of INSERT commands that will insert the statuses of one table into another of
+-- your choosing using SELECT statements (See our lab in class - The INSERT commands should be
+-- generated). It’s ok if the data doesn’t match or make sense! :)
+-- * Remember, INSERT Commands look like: INSERT INTO Table1 (column1, column2) VALUES 
+-- (column1, column2)

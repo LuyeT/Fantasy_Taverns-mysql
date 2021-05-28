@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS `Orders` (
+  OrderID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  tavernID INT,
+  totalCost FLOAT,
+  deliveryDate VARCHAR(8),
+  CONSTRAINT `fk_orders_tavern`
+    FOREIGN KEY (tavernID) REFERENCES Taverns (`TavernID`)
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT
+);
+
+INSERT INTO Orders (tavernID,totalCost,deliveryDate) VALUES
+(1,340.0,'12122020'),
+(3,350.0,'20122020'),
+(2,200.50,'23122020'),
+(4,100.0,'05012021'),
+(1,300.0,'08012021');

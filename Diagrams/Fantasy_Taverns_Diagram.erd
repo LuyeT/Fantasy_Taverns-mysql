@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram version="1" name="Fantasy_Taverns_Diagram.erd">
+	<entities>
+		<data-source id="mariaDB-17759ce4472-46408d5c09b7a9a7">
+			<entity id="1" name="Class" fq-name="Fantasy_Taverns.Class" order="0" x="1233" y="1120">
+				<path name="Fantasy_Taverns"/>
+			</entity>
+			<entity id="2" name="Deliveries" fq-name="Fantasy_Taverns.Deliveries" order="1" x="243" y="525">
+				<path name="Fantasy_Taverns"/>
+			</entity>
+			<entity id="3" name="GuestClass" fq-name="Fantasy_Taverns.GuestClass" order="2" x="1177" y="875">
+				<path name="Fantasy_Taverns"/>
+			</entity>
+			<entity id="4" name="GuestStatus" fq-name="Fantasy_Taverns.GuestStatus" order="3" x="644" y="781">
+				<path name="Fantasy_Taverns"/>
+			</entity>
+			<entity id="5" name="Guests" fq-name="Fantasy_Taverns.Guests" order="4" x="961" y="396">
+				<path name="Fantasy_Taverns"/>
+			</entity>
+			<entity id="6" name="Inventories" fq-name="Fantasy_Taverns.Inventories" order="5" x="368" y="315">
+				<path name="Fantasy_Taverns"/>
+			</entity>
+			<entity id="7" name="Orders" fq-name="Fantasy_Taverns.Orders" order="6" x="560" y="518">
+				<path name="Fantasy_Taverns"/>
+			</entity>
+			<entity id="8" name="Roles" fq-name="Fantasy_Taverns.Roles" order="7" x="1827" y="45">
+				<path name="Fantasy_Taverns"/>
+			</entity>
+			<entity id="9" name="RoomStatus" fq-name="Fantasy_Taverns.RoomStatus" order="8" x="1880" y="553">
+				<path name="Fantasy_Taverns"/>
+			</entity>
+			<entity id="10" name="RoomStays" fq-name="Fantasy_Taverns.RoomStays" order="9" x="1395" y="296">
+				<path name="Fantasy_Taverns"/>
+			</entity>
+			<entity id="11" name="Rooms" fq-name="Fantasy_Taverns.Rooms" order="10" x="1752" y="224">
+				<path name="Fantasy_Taverns"/>
+			</entity>
+			<entity id="12" name="ServiceCatalogue" fq-name="Fantasy_Taverns.ServiceCatalogue" order="11" x="1378" y="791">
+				<path name="Fantasy_Taverns"/>
+			</entity>
+			<entity id="13" name="ServiceSales" fq-name="Fantasy_Taverns.ServiceSales" order="12" x="1188" y="542">
+				<path name="Fantasy_Taverns"/>
+			</entity>
+			<entity id="14" name="ServiceStatus" fq-name="Fantasy_Taverns.ServiceStatus" order="13" x="1848" y="852">
+				<path name="Fantasy_Taverns"/>
+			</entity>
+			<entity id="15" name="Services" fq-name="Fantasy_Taverns.Services" order="14" border-width="3" x="1520" y="605">
+				<path name="Fantasy_Taverns"/>
+			</entity>
+			<entity id="16" name="StatusCatalogue" fq-name="Fantasy_Taverns.StatusCatalogue" order="15" x="523" y="977">
+				<path name="Fantasy_Taverns"/>
+			</entity>
+			<entity id="17" name="SupplyCatalogue" fq-name="Fantasy_Taverns.SupplyCatalogue" order="16" x="33" y="257">
+				<path name="Fantasy_Taverns"/>
+			</entity>
+			<entity id="18" name="SupplySale" fq-name="Fantasy_Taverns.SupplySale" order="17" x="284" y="90">
+				<path name="Fantasy_Taverns"/>
+			</entity>
+			<entity id="19" name="SupplyTransactions" fq-name="Fantasy_Taverns.SupplyTransactions" order="18" x="589" y="95">
+				<path name="Fantasy_Taverns"/>
+			</entity>
+			<entity id="20" name="Taverns" fq-name="Fantasy_Taverns.Taverns" order="19" x="944" y="154">
+				<path name="Fantasy_Taverns"/>
+			</entity>
+			<entity id="21" name="UserRoles" fq-name="Fantasy_Taverns.UserRoles" order="20" x="1629" y="61">
+				<path name="Fantasy_Taverns"/>
+			</entity>
+			<entity id="22" name="Users" fq-name="Fantasy_Taverns.Users" order="21" x="1307" y="114">
+				<path name="Fantasy_Taverns"/>
+			</entity>
+		</data-source>
+	</entities>
+	<relations>
+		<relation name="fk_guest-class_class" fq-name="Fantasy_Taverns.GuestClass.`fk_guest-class_class`" type="fk" pk-ref="1" fk-ref="3"/>
+		<relation name="fk_guest-class_guest" fq-name="Fantasy_Taverns.GuestClass.`fk_guest-class_guest`" type="fk" pk-ref="5" fk-ref="3"/>
+		<relation name="fk_gueststatus_guest" fq-name="Fantasy_Taverns.GuestStatus.fk_gueststatus_guest" type="fk" pk-ref="5" fk-ref="4"/>
+		<relation name="fk_roomstay_guest" fq-name="Fantasy_Taverns.RoomStays.fk_roomstay_guest" type="fk" pk-ref="5" fk-ref="10"/>
+		<relation name="fk_supply-transactions_guest" fq-name="Fantasy_Taverns.SupplyTransactions.`fk_supply-transactions_guest`" type="fk" pk-ref="5" fk-ref="19"/>
+		<relation name="fk_deliveries_orders" fq-name="Fantasy_Taverns.Deliveries.fk_deliveries_orders" type="fk" pk-ref="7" fk-ref="2"/>
+		<relation name="fk_userrole_role" fq-name="Fantasy_Taverns.UserRoles.fk_userrole_role" type="fk" pk-ref="8" fk-ref="21"/>
+		<relation name="fk_room_roomstatus" fq-name="Fantasy_Taverns.Rooms.fk_room_roomstatus" type="fk" pk-ref="9" fk-ref="11"/>
+		<relation name="fk_roomstay_room" fq-name="Fantasy_Taverns.RoomStays.fk_roomstay_room" type="fk" pk-ref="11" fk-ref="10"/>
+		<relation name="fk_sales_service" fq-name="Fantasy_Taverns.ServiceSales.fk_sales_service" type="fk" pk-ref="12" fk-ref="13"/>
+		<relation name="fk_services_service" fq-name="Fantasy_Taverns.Services.fk_services_service" type="fk" pk-ref="12" fk-ref="15"/>
+		<relation name="fk_roomstay_sale" fq-name="Fantasy_Taverns.RoomStays.fk_roomstay_sale" type="fk" pk-ref="13" fk-ref="10"/>
+		<relation name="fk_services_status" fq-name="Fantasy_Taverns.Services.fk_services_status" type="fk" pk-ref="14" fk-ref="15"/>
+		<relation name="fk_gueststatus_status" fq-name="Fantasy_Taverns.GuestStatus.fk_gueststatus_status" type="fk" pk-ref="16" fk-ref="4"/>
+		<relation name="fk_deliveries_supply" fq-name="Fantasy_Taverns.Deliveries.fk_deliveries_supply" type="fk" pk-ref="17" fk-ref="2"/>
+		<relation name="fk_inventory_supply" fq-name="Fantasy_Taverns.Inventories.fk_inventory_supply" type="fk" pk-ref="17" fk-ref="6"/>
+		<relation name="fk_supplysale_supplyID" fq-name="Fantasy_Taverns.SupplySale.fk_supplysale_supplyID" type="fk" pk-ref="17" fk-ref="18"/>
+		<relation name="fk_supplysale_transactionID" fq-name="Fantasy_Taverns.SupplySale.fk_supplysale_transactionID" type="fk" pk-ref="19" fk-ref="18"/>
+		<relation name="fk_guest_tavern" fq-name="Fantasy_Taverns.Guests.fk_guest_tavern" type="fk" pk-ref="20" fk-ref="5"/>
+		<relation name="fk_inventory_tavern" fq-name="Fantasy_Taverns.Inventories.fk_inventory_tavern" type="fk" pk-ref="20" fk-ref="6"/>
+		<relation name="fk_orders_tavern" fq-name="Fantasy_Taverns.Orders.fk_orders_tavern" type="fk" pk-ref="20" fk-ref="7"/>
+		<relation name="fk_room_tavern" fq-name="Fantasy_Taverns.Rooms.fk_room_tavern" type="fk" pk-ref="20" fk-ref="11"/>
+		<relation name="fk_sales_tavern" fq-name="Fantasy_Taverns.ServiceSales.fk_sales_tavern" type="fk" pk-ref="20" fk-ref="13"/>
+		<relation name="fk_services_tavern" fq-name="Fantasy_Taverns.Services.fk_services_tavern" type="fk" pk-ref="20" fk-ref="15"/>
+		<relation name="fk_supply-transactions_tavern" fq-name="Fantasy_Taverns.SupplyTransactions.`fk_supply-transactions_tavern`" type="fk" pk-ref="20" fk-ref="19"/>
+		<relation name="fk_UserID" fq-name="Fantasy_Taverns.Taverns.fk_UserID" type="fk" pk-ref="22" fk-ref="20"/>
+		<relation name="fk_userrole_User" fq-name="Fantasy_Taverns.UserRoles.fk_userrole_User" type="fk" pk-ref="22" fk-ref="21"/>
+	</relations>
+</diagram>
